@@ -11,9 +11,10 @@ class Worker(threading.Thread):
         time.sleep(3)
         self.callback('DONE')
 
-class ThreadHandler(tornado.web.RequestHandler):
+class ThreadHandler(BaseHandler):
     @asynchronous
     def get(self):
+        self.load_json()
         Worker(self.worker_done).start()
 
     def worker_done(self, value):

@@ -14,5 +14,5 @@ class BaseHandler(tornado.web.RequestHandler):
 subclass this one.
 """
     def load_json(self):
-        print "XXXXXXX"
+        print "blahhhhhh"
 
